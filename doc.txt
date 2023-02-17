@@ -1,0 +1,16 @@
+nodemon : thư viện giúp reload lại mỗi khi code thay đổi
+morgan : HTTP request logger middleware
+Template engine (handlebars): giúp code mã html ở nơi khác
+
+
++ Query parameters : truyền dữ liệu qua url
+
+* GET : sử dụng khi muốn nhận dữ liệu từ server trả về client
+hiện trên URL
+*POST : gửi dữ liệu client đến server - k hiển thị trên URL
+
+
+* Template operator
+limit(): số lượng phần tử trong data
+skip() : bỏ qua số phần tử
+/.../ : tìm các phần tử có ...
