@@ -14,3 +14,6 @@ hiện trên URL
 limit(): số lượng phần tử trong data
 skip() : bỏ qua số phần tử
 /.../ : tìm các phần tử có ...
+
+Refresh token => Cấp mới access token
+Access token => Xác thực người dùng , phân quyền sử dụng

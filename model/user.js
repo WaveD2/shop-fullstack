@@ -64,9 +64,18 @@ userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();
   }
+  // mã hóa password
   const salt = bcrypt.genSaltSync(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
+
+//Check login User
+userSchema.methods = {
+  //mongodb not reading arrow fun
+  isCorrectPassword: async function (password) {
+    return await bcrypt.compare(password, this.password);
+  },
+};
 
 //Export the model
 module.exports = mongoose.model("User", userSchema);

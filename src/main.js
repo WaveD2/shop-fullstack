@@ -3,15 +3,19 @@ require("dotenv").config();
 const dbConnect = require("../config/dbconnect");
 const app = express();
 const initRouter = require("../routers");
+const cookieParser = require("cookie-parser");
+
 const port = process.env.PORT || 8080;
 
 dbConnect();
-app.use(express.json()); //express đọc hiểu data từ phía client gửi lên
+app.use(express.json());
+//express đọc hiểu data từ phía client gửi lên
 app.use(
   express.urlencoded({
     extended: true,
   })
 );
+app.use(cookieParser());
 
 initRouter(app);
 
